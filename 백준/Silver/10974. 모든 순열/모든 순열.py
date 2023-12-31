@@ -3,7 +3,7 @@ def P():
         print(' '.join(map(str, result)))
         return
     else:
-        for i in L:
+        for i in range(1,n+1):
             if visited[i-1] == True:
                 continue
             result.append(i)
@@ -14,8 +14,6 @@ def P():
 
 
 n = int(input())
-L = [i for i in range(1,n+1)]
-
 result = []
 visited = [False for _ in range(n)]
 P()
