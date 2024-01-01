@@ -1,18 +1,15 @@
-def draw_stars(n):
-  if n==1:
-    return ['*']
+def star(n):
+    if n ==3:
+        return ['***','* *','***']
+    S = star(n//3)
+    L = []
+    L.append(list(map(lambda x: x * 3,S)))
+    L.append(list(map(lambda x: x +' '*(n//3)+x,S)))
+    L.append(list(map(lambda x: x * 3,S)))
+    L = L[0] + L[1] + L[2]
+    return L
+    
 
-  Stars=draw_stars(n//3)
-  L=[]
 
-  for star in Stars:
-    L.append(star*3)
-  for star in Stars:
-    L.append(star+' '*(n//3)+star)
-  for star in Stars:
-    L.append(star*3)
-
-  return L
-
-N=int(input())
-print('\n'.join(draw_stars(N)))
+n = int(input())
+print('\n'.join(star(n)))
