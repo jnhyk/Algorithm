@@ -1,7 +1,15 @@
 n = int(input())
-light = [620,590,570,495,450,425,380]
-color = ["Red", "Orange", "Yellow", "Green", "Blue", "Indigo", "Violet"]
-for i in range(len(light)):
-    if n >= light[i]:
-        print(color[i])
-        break
+if n >= 620 and n <= 780:
+    print("Red")
+elif n >= 590:
+    print("Orange")
+elif n >= 570:
+    print("Yellow")
+elif n >= 495:
+    print("Green")
+elif n >= 450:
+    print("Blue")
+elif n >= 425:
+    print("Indigo")
+else:
+    print("Violet")
