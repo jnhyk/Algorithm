@@ -1,0 +1,32 @@
+a1 = ['b', 'i', 'l', 'm', 'n', 'o', 'p', 's', 'u', 'v', 'w', 'x']
+a2 = ['d', 'i', 'l', 'm', 'n', 'o', 'q', 'z', 'u', 'v', 'w', 'x']
+same = ['i', 'l', 'm', 'n', 'o', 'u', 'v', 'w', 'x']
+
+def check(s):
+	for i in s:
+		if i not in a1 and i not in a2:
+			return False
+	return True
+def check2(word):
+	for i in range(len(word)//2):
+			if word[i] in a1:
+				if word[len(word) - i -1] != a2[a1.index(word[i])]:
+					return "Normal"
+			else:
+				if word[len(word) - i -1] != a1[a2.index(word[i])]:
+					return "Normal"
+	return "Mirror"
+		
+n = int(input())
+for _ in range(n):
+	result = "Mirror"
+	word = input()
+	c = check(word)
+	if not c:
+		result = "Normal"
+	else:
+		result = check2(word)
+		if len(word) % 2 == 1 and word[len(word)//2] not in same:
+			result = "Normal"
+			
+	print(result)
