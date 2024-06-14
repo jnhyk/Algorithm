@@ -1,0 +1,12 @@
+t = int(input())
+for _ in range(t):
+	n, k = map(int, input().split())
+	m = []
+	trash = []
+	for i in range(n):
+		m.append(list(map(int,input().split())))
+	for i in range(n-k+1):
+		for j in range(n-k+1):
+			trash.append(sum(list(map(lambda x:x[j:j+k].count(1), m[i:i+k]))))
+	print(min(trash))
+	
