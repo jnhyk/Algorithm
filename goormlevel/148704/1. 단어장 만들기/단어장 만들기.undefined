@@ -1,0 +1,13 @@
+n,k = map(int, input().split())
+
+l = {}
+for _ in range(n):
+	word = input()
+	if len(word) in l:
+		l[len(word)].append(word)
+	else:
+		l[len(word)] = [word]
+a = list(map(sorted,l.values()))
+a.sort(key = lambda x:len(x[0]))
+result = [i for s in a for i in s ]
+print(result[k-1])
