@@ -1,5 +1,7 @@
-a = int(input())
+n = int(input())
+i = 1
 s = 0
-for i in range(1,a+1):
+while i <= n:
     s += i
+    i += 1
 print(s)
