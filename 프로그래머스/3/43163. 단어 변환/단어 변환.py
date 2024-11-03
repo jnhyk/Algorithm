@@ -7,8 +7,7 @@ def chooseStrs(str1, strings, visited):
 
 def dfs(begin, target, words, visited):
     l = chooseStrs(begin, words, visited)
-    print(l)
-    a = []
+    a = 0
     if begin == target:
         return 0
     if not l:
@@ -16,8 +15,7 @@ def dfs(begin, target, words, visited):
     for i in l:
         if not visited[words.index(i)]:
             visited[words.index(i)] = 1
-            print(visited)
-            a = (dfs(i, target, words, visited))
+            a = dfs(i, target, words, visited)
             visited[words.index(i)] = 0
     return a + 1
     
